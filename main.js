@@ -3,14 +3,34 @@ var ctx=c.getContext("2d");
 var img=document.getElementById("elevatorimg");
 var y=0;
 
+c.height=window.innerHeight;
+c.width=window.innerWidth/2;
+
+var imgwidth=c.width/3;
+var imgheight=c.height/4;
 
 
+ctx.drawImage(img,c.width/3,y,imgwidth,imgheight);
 
-	
+
+ctx.moveTo(0,c.height/4);
+ctx.lineTo(c.width,c.height/4);
+ctx.stroke();
+
+ctx.moveTo(0,c.height/2);
+ctx.lineTo(c.width,c.height/2);
+ctx.stroke();
+
+ctx.moveTo(0,c.height*3/4);
+ctx.lineTo(c.width,c.height*3/4);
+ctx.stroke();
+
+
+   
+  
     
-    ctx.drawImage(img,50,y,150,150);
-    
-   	var myVar=setInterval(move, 10)
+var myVar=setInterval(move, 10);
+
 	
 
 
@@ -23,9 +43,26 @@ function move()
       y=y-1;}
    
     	ctx.clearRect(0, 0, c.width, c.height);
-        ctx.drawImage(img,50,y,150,150);
+
+
+ctx.moveTo(0,c.height/4);
+ctx.lineTo(c.width,c.height/4);
+ctx.stroke();
+
+ctx.moveTo(0,c.height/2);
+ctx.lineTo(c.width,c.height/2);
+ctx.stroke();
+
+ctx.moveTo(0,c.height*3/4);
+ctx.lineTo(c.width,c.height*3/4);
+ctx.stroke();
+
+
+
+      
+        ctx.drawImage(img,c.width/3,y,imgwidth,imgheight);
         
-        if(y<0||y>500)
+        if(y<0||y>(c.height-imgheight))
         {
         clearInterval(myVar);
         }

@@ -3,19 +3,140 @@
 <head>
 	<title>Elevator</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<style type="text/css">
+	#elevator{
+		border: 2px solid black;
+		margin:0 auto;
+		padding: 0px;
+		float: center;
+		
+	}
+
+	html,body{
+		margin: 0px;
+		padding: 0px;
+	}
+	button{
+		display: inline-block;
+		width: 150px;
+		text-align: center;
+		margin-top: 10px;
+		margin-bottom: 10px;	
+	}
+	.col-12{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+</style>
 </head>
 <body>
-<canvas id="elevator" width="250px" height="650px" style="border: 2px solid black;"></canvas>
+
 <img id="elevatorimg" style="display: none;" src="index.jpeg">
 
+	<div class="row">
+		<div class="col">
+			<div class="container-fluid" style="border: 2px solid red;">
+				<div class="row">
+					<div class="col-12">
+						<button class="btn btn-primary"><i class="glyphicon glyphicon-fire" style="font-size:20px;"></i></button>
+					</div>
+				</div>
+				<h3>1.)</h3>
+				<div class="row">
+					<div class="col-12">
+						<button class="btn btn-primary" onclick="movedown()"><i class="glyphicon glyphicon-menu-down" style="font-size:20px;"></i></button>
+					</div>
+				</div>
+			</div>
+
+			
+			<div class="container-fluid" style="border: 2px solid red;">
+				<div class="row">
+					<div class="col-12">
+						<button class="btn btn-primary" onclick="moveup()"><i class="glyphicon glyphicon-menu-up" style="font-size:20px;"></i></button>
+					</div>
+				</div>
+				<h3>2.)</h3>
+				<div class="row">
+					<div class="col-12">
+						<button class="btn btn-primary" onclick="movedown()"><i class="glyphicon glyphicon-menu-down" style="font-size:20px;"></i></button>
+					</div>
+				</div>
+			</div>
+
+			
+			<div class="container-fluid" style="border: 2px solid red;">
+				<div class="row">
+					<div class="col-12">
+						<button class="btn btn-primary" onclick="moveup()"><i class="glyphicon glyphicon-menu-up" style="font-size:20px;"></i></button>
+					</div>
+				</div>
+				<h3>3.)</h3>
+				<div class="row">
+					<div class="col-12">
+						<button class="btn btn-primary" onclick="movedown()"><i class="glyphicon glyphicon-menu-down" style="font-size:20px;"></i></button>
+					</div>
+				</div>
+			</div>
+
+			
+			<div class="container-fluid" style="border: 2px solid red;">
+				<div class="row">
+					<div class="col-12">
+						<button class="btn btn-primary" onclick="moveup()"><i class="glyphicon glyphicon-menu-up" style="font-size:20px;"></i></button>
+					</div>
+				</div>
+				<h3>4.)</h3>
+				<div class="row">
+					<div class="col-12">
+						<button class="btn btn-primary"><i class="glyphicon glyphicon-fire" style="font-size:20px;"></i></button>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="col">
+			<canvas id="elevator"></canvas>
+		</div>
+		<div class="col" style="display: flex;justify-content: center;align-items: center;">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-12">
+						<button class="btn btn-danger" onclick="stop()" style="width: 200px;"><i class="glyphicon glyphicon-stop" style="font-size:50px;"></i></button>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-12">
+						<button class="btn btn-success" onclick="start()" style="width: 200px;"><i class="glyphicon glyphicon-play" style="font-size:50px;"></i></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
-<button onclick="moveup()">UP</button>
-<button onclick="movedown()">DOWN</button>
-<button onclick="stop()">STOP</button>
-<button onclick="start()">GO</button>
+
+
+
+
+
+
 
 
 <script src="main.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>
