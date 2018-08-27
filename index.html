@@ -50,10 +50,10 @@
 						<button class="btn btn-primary"><i class="glyphicon glyphicon-fire" style="font-size:20px;"></i></button>
 					</div>
 				</div>
-				<h3>1.)</h3>
+				<h3>4.)</h3>
 				<div class="row">
 					<div class="col-12">
-						<button class="btn btn-primary" onclick="movedown()"><i class="glyphicon glyphicon-menu-down" style="font-size:20px;"></i></button>
+						<button class="btn btn-primary" id="md4" onclick="movedown4()"><i class="glyphicon glyphicon-menu-down" style="font-size:20px;"></i></button>
 					</div>
 				</div>
 			</div>
@@ -62,28 +62,13 @@
 			<div class="container-fluid" style="border: 2px solid red;">
 				<div class="row">
 					<div class="col-12">
-						<button class="btn btn-primary" onclick="moveup()"><i class="glyphicon glyphicon-menu-up" style="font-size:20px;"></i></button>
-					</div>
-				</div>
-				<h3>2.)</h3>
-				<div class="row">
-					<div class="col-12">
-						<button class="btn btn-primary" onclick="movedown()"><i class="glyphicon glyphicon-menu-down" style="font-size:20px;"></i></button>
-					</div>
-				</div>
-			</div>
-
-			
-			<div class="container-fluid" style="border: 2px solid red;">
-				<div class="row">
-					<div class="col-12">
-						<button class="btn btn-primary" onclick="moveup()"><i class="glyphicon glyphicon-menu-up" style="font-size:20px;"></i></button>
+						<button class="btn btn-primary" id="mu3" onclick="moveup3()"><i class="glyphicon glyphicon-menu-up" style="font-size:20px;"></i></button>
 					</div>
 				</div>
 				<h3>3.)</h3>
 				<div class="row">
 					<div class="col-12">
-						<button class="btn btn-primary" onclick="movedown()"><i class="glyphicon glyphicon-menu-down" style="font-size:20px;"></i></button>
+						<button class="btn btn-primary" id="md3" onclick="movedown3()"><i class="glyphicon glyphicon-menu-down" style="font-size:20px;"></i></button>
 					</div>
 				</div>
 			</div>
@@ -92,10 +77,25 @@
 			<div class="container-fluid" style="border: 2px solid red;">
 				<div class="row">
 					<div class="col-12">
-						<button class="btn btn-primary" onclick="moveup()"><i class="glyphicon glyphicon-menu-up" style="font-size:20px;"></i></button>
+						<button class="btn btn-primary" id="mu2" onclick="moveup2()"><i class="glyphicon glyphicon-menu-up" style="font-size:20px;"></i></button>
 					</div>
 				</div>
-				<h3>4.)</h3>
+				<h3>2.)</h3>
+				<div class="row">
+					<div class="col-12">
+						<button class="btn btn-primary" id="md2" onclick="movedown2()"><i class="glyphicon glyphicon-menu-down" style="font-size:20px;"></i></button>
+					</div>
+				</div>
+			</div>
+
+			
+			<div class="container-fluid" style="border: 2px solid red;">
+				<div class="row">
+					<div class="col-12">
+						<button class="btn btn-primary" id="mu1" onclick="moveup1()"><i class="glyphicon glyphicon-menu-up" style="font-size:20px;"></i></button>
+					</div>
+				</div>
+				<h3>1.)</h3>
 				<div class="row">
 					<div class="col-12">
 						<button class="btn btn-primary"><i class="glyphicon glyphicon-fire" style="font-size:20px;"></i></button>
@@ -109,6 +109,32 @@
 		</div>
 		<div class="col" style="display: flex;justify-content: center;align-items: center;">
 			<div class="container-fluid">
+
+
+				<div class="row">
+					<div class="col-12">
+						<button type="button" id="four" class="btn btn-secondary" onclick="four_pressed()" style="width: 50px;border-radius: 50px;">4</button>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-12">
+						<button type="button" id="three" class="btn btn-secondary" onclick="three_pressed()" style="width: 50px;border-radius: 50px;">3</button>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-12">
+						<button type="button" id="two" class="btn btn-secondary" onclick="two_pressed()" style="width: 50px;border-radius: 50px;">2</button>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-12">
+						<button type="button" id="one" class="btn btn-secondary" onclick="one_pressed()" style="width: 50px;border-radius: 50px;">1</button>
+					</div>
+				</div>
+
 				<div class="row">
 					<div class="col-12">
 						<button class="btn btn-danger" onclick="stop()" style="width: 200px;"><i class="glyphicon glyphicon-stop" style="font-size:50px;"></i></button>
@@ -134,6 +160,7 @@
 
 
 <script src="main.js"></script>
+<script src="algo.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
