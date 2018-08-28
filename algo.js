@@ -1,5 +1,5 @@
 var current_floor=4;
-var destination_floor;
+
 
 
 //returns the floor no. from the value of y
@@ -8,11 +8,11 @@ function get_the_floor(y)
 {
 	if(y==0)
 		{return 4;}
-	else if(y==c.height/4)
+	else if(y==Math.round(c.height/4))
 		{return 3;}
-	else if(y==c.height/2)
+	else if(y==Math.round(c.height/2))
 		{return 2;}
-	else if(y==c.height*3/4)
+	else if(y==Math.round(c.height*3/4))
 		{return 1;}
 }
 
@@ -31,27 +31,7 @@ function get_y(floor)
 		{return Math.round(c.height*3/4);}
 }
 
-//functions for 1/2/3/4 lift buttons pressed
 
-function one_pressed()
-{
-  	document.getElementById("one").style.backgroundColor="red";
-}
-
-function two_pressed()
-{
-	document.getElementById("two").style.backgroundColor="red";
-}
-
-function three_pressed()
-{
-	document.getElementById("three").style.backgroundColor="red";
-}
-
-function four_pressed()
-{
-	document.getElementById("four").style.backgroundColor="red";
-}
 
 
 
@@ -72,12 +52,7 @@ function movedown3()
 function movedown2()
 {
 	document.getElementById("md2").style.backgroundColor="red";
-	var reset=move_to_floor(2);
-	if(reset)
-	{
-		document.getElementById("md2").style.backgroundColor="#337ab7";
-		reset=false;
-	}
+	move_to_floor(2);
 }
 
 function moveup1()
@@ -99,47 +74,33 @@ function moveup3()
 }
 
 
+
+
+
+
+
+
 //function to move the lift from current_floor to destination_floor
 
 function move_to_floor(dfloor)
 {
 
 	var difference=dfloor-current_floor;
-
+	var dest_y;
 	if(difference>0)
 	{		
-		 up=true;
-		 down=false;
+		 dest_y=get_y(dfloor);
+		 moveup(dest_y);
 	}
 	else if(difference<0)
-	{		
-		 down=true;
-		 up=false;
-	}
-	else
-	{		
-		 down=false;
-		 up=false;
+	{	
+		 dest_y=get_y(dfloor);	
+		 movedown(dest_y);
 	}
 	
-	 dest_y=get_y(dfloor);
 	
-	move();
-	
-	current_floor=dfloor;
-	return true;
+	//current_floor=dfloor;
 	
 }
 
 
-/*
-cancelAnimationFrame(reqanimationreference)
-
-function movediv(timestamp){
-    leftpos += 5
-    adiv.style.left = leftpos + 'px'
-    requestAnimationFrame(movediv) // call requestAnimationFrame again to animate next frame
-}
-requestAnimationFrame(movediv)
-
-*/
